@@ -1,0 +1,979 @@
+✅JavaScript Notes *
+1_dot ( . ) operater in javascriptis are executed from left to right when there are multiple dot operater present in one line of code.
+
+2_whenever we take data input from user in javascriptit it is always a sring wheather we take a number as input or srting or any other data type
+  so we have to convert it according to our use/need.
+
+3_in javascript Refactering means Restructuring the code.
+
+4-Function expression without name is called Anonymuous function in javascript.
+
+5_we should not use 'var' as a varaible in our program and we should also not use any variable or function before its decleration in javascript.
+
+6_window is the Global object in javascript in browser.
+
+7_we should not use arrow function as method in an object literal and also do not use this keyword inside the arrow function.
+
+8_we should always use a regular function or function decleration as a method in an object literal.
+
+9_an object is not a block scope but it creats its own object literal scope.
+
+10_the value of this keyword in a regular function call is always undefined.
+
+11_the arrow function can use the property of an object through this keyword if it is defined inside a regular function which is a property of the object.
+
+12_the arguments keyword is only available in function decleration and function expression but not in arrow function.
+
+13_the varaible decleared with const are unmutable (not chagable or can not be modified further) for primitive data but for object ( refrence value )
+    we can mutate the property value of the object but we can not assign a whole object completly to a new object if decleared with const however it is possible with let.
+
+14_if we have two object like 'objoriginal=objcopy' and if we change any property value in 'objcopy' then it will also change the property value for 'objoriginal' this
+   is because they both point to the same memory address in the call stack memory but the value of property changes take place in heap memory. 
+
+15_if we have to make a shalow (duplicate) copy of an object then we can use 'object.assign' function so that we can change the property value of 'objcopy' without 
+    affecting the property value of 'objoriginal' however it will not allow a deep copy of the property that means if we have an object (like array or any other object)
+    inside an object then if we change the value of the array for 'objcopy' then it will also change the value of 'objoriginal'.
+
+
+
+
+✅✅Data Structure-Modern Operators And Strings **
+💡💡Lecture 13 💡💡
+✅✅Topics:(
+Array and Object Destructuring, 
+Spread Operator, Rest pattern and Rest parameter, 
+Short circuiting (&& and ||), 
+The Nullish Coalescing Operator ( ?? ), 
+Logical Assignment Operators )
+
+✅spread operator * (need modification)
+✍️ remember that we use spread operater to built new arrays or to pass multiple values into a function, So these are the two use cases of spread operater,
+   and in both cases we use the spread operater to expand an array into individual elements.
+
+✍️ when there is a square bracket [] on left side of the assignment operater(=) also called as destructuring assignment in case of destructuring,
+   javascript understnad that it should do Destructuring. here the assignment operater (=) does not work as normal assignment operater.
+
+✍️ if we want to skip any array value while destructuring an array we can skip by seperating , eg. const[a, ,b]=[10,20,30];   OUTPUT would be: 10 and 30.
+
+✍️ we can skip any value in object destructuring without any comma( , ) seperation what we do in array destructuring.
+
+✍️ Destructuring is a JavaScript expression that allows us to extract data from
+   arrays, objects, and maps and set them into new, distinct ( different ) variables.
+   Destructuring allows us to extract multiple properties, or items, from an array​ at a time.
+   
+✍️ we use curley braces {} for destructuring object instead of square bracket which we use while destructuring array.
+
+✍️ the variable name while destructuring object should exactly be same as the property name that we want to retrive frome the object,  however you can rename it.
+
+✍️ in real world application since the data is not hard coded or precoded but the data comes from the outside through API and we don't know
+    how exactly the data looks like then it becomes important to set the default value while destructuring data.
+
+✍️ while mutating an object during destructuring object we can't write only curley braces
+   on left side of the assignment(=) since we get an uncaught syntax error,  hence we write 
+   the whole expression the left and right side of the assignment(=) inside the parentheses to avoid the error.
+
+✍️ The spread operator is commonly used to make deep copies of JS objects. When we have nested arrays or nested data in an object, 
+   the spread operator makes a deep copy of top-level data and a shallow copy of the nested data. Using this operator makes the code concise 
+   and enhances its readability.
+
+✍️ the spread operater is used to expand the value of an iterable like String, Sets, Maps or Object spacially an Array.
+
+✍️ when there is a situation like we have to write multiple values seperated by comma( , ) then we can use spread operater(...x) to
+   avoid wrting the value multiple times. 
+
+✍️ spread operater is actually a bit similar to destructuring because it also helps us get elements out of arrays, the big diffence is that
+   the spread operater takes all the elements from the array and it also does not creats a new varaibles, and as a consequence 
+   we can only use it in places where we would otherwise write values seperated by comma's( , ).
+
+✍️ in javascript iterables are arrays, maps, sets etc.  ( but Not object )
+ 
+✍️ multiple values seperated by comma( , ) in spread operater are usually
+   only expected when we pass arguments into a function or when we built a new array.
+
+✍️ the spread operater actually also works on objects, even though objects are not iterables.
+
+✍️ since we were able to do shallow coppies of arrays using the spread operater we
+   can do the same with objects, so instead of using object.assign function as we
+   did in the previous lecture. and we can also change the property value of the 
+   cppied object and it will not affect the original object property value. 
+
+
+✅Rest pattern and Rest parameter *
+✍️ The rest operator in javaScript allows a function to take an indefinite number of arguments and bundle them in an array,
+   thus allowing us to write functions that can accept a infinite number of arguments, irrespective of the number of parameters defined. 
+   These types of functions in JavaScript are called variadic functions (i.e functions of indefinite arity). 
+   The rest operator in javaScript was introduced in ES6 (or ES2015) to handle function parameters efficiently and easily.
+
+   The rest parameters hold all those leftover arguments that are not given a separate parameter name (i.e formally defined in function expression),
+   By using the rest operator user can call a function with any number of arguments, no matter how it was defined.
+
+  The rest parameter always returns an array so we can use any array methods that the javascript provides us on it.
+
+✍️ remember that we used spread operater to built new arrays or to pass multiple values into a function, So those are the two used cases of spread operater,
+   and in both cases we used the spread operater to expand an array into individual elements. Now the rest pattern uses the exact same syntax however to
+   collect multiple elements and condensed them into an array, so that's realy the opposite of spread, the spread operater is to unpack an array while
+   rest is to pack elements into one array.
+
+✍️ the one big diffence between Spread and Rest operater is that the spread operater
+   is used on right side of the assignment operater ( = ) while Rest operater is 
+   used on left side of the assignment operater ( = ).
+
+✍️ the rest pattern or operater must be in last in the destructuring assignment
+   because it does not include any skipped elements, because otherwise how 
+   javaScript will know untill when it should collect the rest of the arry.
+   Eg. const [a, , b, ...others] = [1, 2, 3, 4, 5]  OUTPUT: 1 3 [4,5].
+   NOTE: WE CAN'T DO THIS: 
+   const [a, , b, ...others, c] = [1, 2, 3, 4, 5]  OUTPUT: syntax error.
+   and also for the same reason therefore there can only ever be one rest operater
+   in destructuring assignment.
+
+✍️ like spread operater rest operater also works for objects.
+
+✍️ when function uses the rest operater in its parameter then its called rest parameter.
+   Eg: function(...number){
+   Note: here the number is a not a normal parameter its a rest parameter
+         and can recieve any arbitrary (based on random choice ) arguments at the same time.
+  }
+
+✍️ so the spread and rest syntax both look exactly the same, but they work in
+  opposite ways depending on where they are used, so the spread operater is used where
+  we would otherwise write values seperated by a comma ( , ). on the otherhand
+  the rest pettern is basically used where we would otherwise write variable names
+  seperated by comma's ( , ).
+  So again the rest pattern can be used where we would write variable names seperated
+  by comma's ( , ) and not values seperated by comma's ( , ). so its a subtle ( precise )
+  distinction but this is how you know when and where to use spread and rest operater.
+
+
+✅Short circuiting ( && and || ) *
+✍️ the logical operator (&& and || ) can use ANY data type, and can return ANY data type and also the do short circuiting.
+   in the case of ( || ) operator short circuiting means that if the first value is a truthy value it will immediately return that first value.
+   if the first operand is truthy in ( || ) operater then the other operand will not even be evaluated, that's what short circuiting mean.
+
+✍️ the result of the ( || ) operator doesn't have to be a boolean, it will simply return the truthy value.
+
+✍️ when it comes to short-circuit evaluation the ( && ) operater works in the exact 
+   opposite way of  the ( || ) operater. 
+
+
+✅Nullish Coalescing Operator ( ?? ) *
+✍️ in nullish Coalescing operator ( ?? ) only ( null and undefined )are consider
+   as nullish or false value but not ( 0 and '' (empty string) ), 0 and ''(empty string) are consider as non-nullish or true value.
+ 
+
+✅Logical Assignment Operators ( || and nullish assignment operater ??) *
+✍️ the logical ( || ) assignment operator will assign a value to a varaible if 
+    that exact variable is falsy right now.
+
+✍️ the logical nullish assignment operater ( ?? ) will assign a value to a variable
+   if that exact value is currently nullish ( 0 or '' ).
+
+✍️ the logical ( && ) assignment operator will assign a value to a varaible if 
+  that exact variable is currently truthy.
+
+
+
+💡💡Lecture 14 💡💡
+✅✅Topics:(
+for of loop, 
+Enhanced Object Literal, Optional chaining, 
+Looping Objects, Sets, Maps )
+
+✅for of loop *
+for(const item of menu)
+✍️ the 'for-of loop' is called 'for-of' because it is 'for' and then 'item' of the 'menu', so this loop will automatically loop over the entire
+   array and in each iteration it will give us access to the current array element which we can specify in 'item' variable but ofcourse
+   we could call it any thing that we want. And so if we simply log the current item then to the console then simply each element will be logged
+   one by one, and that's because again the item variable is always the current element of the array in each iteration. 
+   And also just like in the if else statement we don't need to create a code block { } when we only have one statement here to execute. 
+
+✍️ in 'for-of loop' the item variable is always the current element in each iteration and also just like in the if else statement 
+   we don't need to create a code block { } when we only have one statement here to execute.
+
+✍️ 'for-of loop' is very nice level of abstraction over the raguler 'for loop', so we can do the same thing with 'for of loop' but without having to
+   worry about all the underlying details such as counters and conditions, what's also great about 'for-of loop' is that we can still use the
+   continue and break keywords, and this is important because in the next section we will learn other ways of looping arrays and in thoseone
+   we will not be able to continue or to break
+
+✍️ in for-of loop when we need the 'Index Number' and the Value of an array at the same time we use arrayName.enteries() function,  like  menu.enteries()
+
+✍️ we don't need to pass any function in .enteries() function in case of array, just keep it empty.
+
+
+✅Enhanced object literal *
+( ES6 introduced 3 ways which make it easier to write object literals. )
+✍️ in ES6 if we want to add an object inside another object we simply needs to write the name of that object which we want to add
+   followed a by comma ( , )  Eg. openingHours,        earlier we used to write like this openingHours:openingHours,
+
+✍️ in ES6 we no longer have to create a property and then set it to a function expression
+   like we have always been doing, essentially we create a property just like to other 
+   property and then we set that to a function expression, but again now we no longer 
+   need to do that, we no need to write function keyword and colon ( : ) in function expression.
+
+// OLDER VERSION
+Eg. order:function(starterIndex,mainIndex){                                                        
+                                                                                                            
+return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];                                             
+      
+( older version )
+}
+
+
+// ES6 VERSION
+order(starterIndex,mainIndex){
+return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+
+( ES5 Version)    
+
+}
+
+✍️ in ES6 now we can also compute ( change ) the property name as well,  earlier we were only able TO compute the property value but not the property name.
+   
+
+✅Optional chaining *
+✍️ in ES6 optional chaining is used to check weather a certain property or
+   methods of an object exist or not and based on that we take certain
+   decision
+
+✍️ the optional chaining works same as nullish Coalescing operater
+   if the value is null or undefined then only it will be false
+   but if it is ( 0 or '' ) then it is true.
+
+✍️ we almost alwys use optional chaining and nullish Coalescing operator togather
+   so that we can actually we do something in case we don't get a result from
+   the object or from the array that are on left side of the nullish Coalescing
+   operator.
+
+
+
+✅Looping Objects : Object Keys ( Object property Name ), Values ( Object property Value ), And Enteries ( Entire Object) *
+✍️ we learnt about the for-of loop to loop over arrays which remember is an iterable,
+   but can also loop over objects which are not iterable but in an indirect way.
+
+✍️ when we have to loop an object's 'Property NAME' we use Object.keys(openingHours)
+   function and pass the object name in the function whoose 'Property NAME' is required.
+
+✍️ when we have to loop an object's 'Property VALUES' we use Object.values(openingHours)
+   function and pass the object name in the function whoose 'property VALUES' is required.
+
+✍️ for looping over the entire object, means the 'Property NAME' and the 'property VALUES' at the same time 
+   we use Object.enteries(openingHours) function and pass the object name in the function that we want to loop. 
+
+✍️ when we use Object.enteries() function while looping an object then we have to pass the objectNmae that
+   we want to loop as an argument in the .enteries() function but in case of loopin an array we don't have to
+   pass any function.
+
+
+
+✅Sets *
+✍️ a set is basically just a collection of unique values, so that means that 
+   a set can never have any duplicates and that property makes them useful in certain
+   situation.
+
+✍️ a 'Sets' kind of looks similar to an 'Array' and just like an 'Array; 'Sets' are also
+   iterables, now ofcourse a 'Set' is still very different from an 'Array',
+   first because its elements are unique and second because the order of the elements
+   in the 'Set' is irrelevant.
+
+✍️ keep in mind that strings are also iterables.
+
+✍️ sets can also be empty, just like this,  Eg. consol.log(new Set());
+
+✍️ the 'size' property of a 'Set' is similar to 'length' property of an 'Array'
+   but both are different please don't get confuse.
+
+✍️ the 'has()' method in a 'Set' is similar to 'include()' method in an 'Array'
+   which is used to check if certain element is present or not.
+
+✍️ in Sets there are no Indexes like in an Array and infact there is no way of
+   getting values out of a 'Set' and if we think about this then it make sense,
+   so there is realy no need for getting data out of a set that's because if all values
+   are unique and if there order does not matter then there is no point of retrieving
+   values out of a 'Set', all we need to know is weather a certain value is in the 'Set' 
+   or not and that's why we have the has() method.
+
+✍️ if your goal is to actually store values in order and then retrieve it then the best
+   usecase is to just use an 'Array' you would not use a 'Set' for that. And so again
+   there is no need for getting values out of a 'Set', because if you need it then
+   you would just use an 'Array'.
+
+✍️ since 'Sets' are also iterable and therefore we can loop over them using for-loop,
+   like we loop over an 'Array'or any other iterable.
+
+✍️ in a normal codebase the main usecase of 'Sets' is actually to remove duplicate
+   values of 'Arrays'.
+
+✍️ 'Sets' are not intended to replace 'Arrays' at all, so whenever you need to store
+    values in order and that might conatin duplicates always just use Arrays,
+    that's also true when you need to realy manipulate data, because 'Arrays' have
+    access to a lot of great 'Array' methods.
+✍️ 'Sets' have this very useful property of being unique, and its also very easy
+    to intract with Sets by using all of there straightforward methods.
+
+✍️ however 'Sets' are not nearly as important as 'Arrays'.
+
+
+
+✅Maps *
+✍️ 'Maps' are a lot more useful than 'Sets'.
+
+✍️ A Map is a data structure that we can use to map values to keys,
+   so just like an 'Objects' data is stored in 'key value pairs' in 'Maps'.
+   Now the big diffence between Objects and 'Maps' is that in 'Maps' the keys
+   can have any type and this can be huge, so in 'Objects' the keys are basically
+   always a string but in 'Map' we can have any type of key, it could even be an 
+  'Object' or 'Arrays' or other 'Maps'.
+
+✍️ the .set() method in 'Maps' is very similar to the .add() method in 'Sets',
+   so both allows to add a new element to the data structure.
+
+✍️ in order to read data from a 'Map' we use the .get() method.
+
+✍️ there are two methods to poppulate a new Map or set values to a new Maps,
+   (i) By creating an empty 'Map' and then insert the values by using .set() method,
+      the .set() method is a bit cumbersome ( difficult ) when there are lot of 
+      values to set.
+
+   (ii) the second method is by creating an 'Array' inside the Map() function and
+        then creat multiple 'Arrays' inside the first 'Array', and in the multiple
+        'Arrays' create a 'key value pairs' as we did by .set() method.
+        so when creating a new 'Map' from scratch directly in the code the second
+        method is preferd.
+        But when we keep adding new elements programmatically using code then
+        ofcourse the .set() method is still way to go.
+
+✍️ we can convert an 'object' to a 'Map' by pssing the Object.enteries(ObjectName) in
+   the Map() function.    Eg: const hoursMap = new Map(Object.entries(openingHours));
+
+✍️ since 'Maps' are also iterable and so the for-of loop is also available for them.
+
+✍️ the for-of loop for the 'Maps' works exact the same as 'Object' the only diffence is
+   that we have to pass Object.enteries(ObjectName) after the 'of' in the for-of loop,
+   and that's just because the 'Object' is not an iterable but then we converted it
+   to an iterable using object.enteries().
+
+✍️ sometimes we also need to convert a 'Map' back to an 'Array',
+   then we can do like this: console.log([...mapName]);  Eg. console.log([...question]);
+  
+
+
+
+💡💡Lecture 15💡💡
+✅✅ Working With Srtings **
+✅✅Topics:(
+SUMMARY: Which Data Structure To Use,
+Coding Challenge #3
+Working With Srtings-Part 1,
+Working With Srtings-Part 2,
+what is regular expression,
+Working With Srtings-Part 3,
+Coding Challenge #4,
+String Methods Practice )
+
+✅Summery: Which Data Structure To Use *
+
+✅Coding Challenge #3 *
+
+✅Working With Srtings-Part 1 *
+✍️ the 'String' Indexes start from zero same as 'Array'
+
+✍️ the Strings are case sensitive like 'P' and 'p' both are different things.
+
+✍️ the slice() method in string is used to extract or cut a part of 'String', the String
+   obtained after slicing is called 'Sub String', its a part of the original String,
+   this does not change the underlying Strings, thats because its actually impossible
+   to mutate Strings they are primitive.
+
+✍️ all the methods of a Strings returns a new string so we can store it in a varaible.
+
+✍️ the length of the extracted String is always going to be ( endIndex-beginingIndex ).
+
+✍️ we know that 'Strings' are just primitives, so why do thay have methods,
+   souldn't methods only be available on objects such as Arrays, well that is actually
+   true, however javaScript is realy smart and so here is how this works,
+   whenever we call a method on a 'String' javaScript will automatically behind the
+   scenes convert that 'String primitive' to a 'String Object' with the same content
+   and then its on that object where the methods are called, And this process is 
+   called 'Boxing' because it basically takes our String and puts it into a 'Box' 
+   which is the object.
+   So basically what happens is this;
+   console.log(new String('Jonas'));
+   OUTPUT:
+   String {'Jonas'}
+       0: "J"
+       1: "o"
+       2: "n"
+       3: "a"
+       4: "s"
+       length: 5
+
+✍️ when the operation is done by the string methods() the object is converted back to
+  a regular string primitive.
+
+✍️ all strings methods() returns primitives even if called on a string object.
+   Eg: console.log(typeof new String('jonas'));  // OOTPUT: object
+       console.log(typeof new String('jonas').slice(1));  // OOTPUT: String
+
+
+✅Working With Srtings-Part 2 *
+✍️ in string replace() method is case sensitive, so just like all of the other string methods are.
+
+✍️ before comparing a string to any conditions first convert it into lowercase by using tolowercase() method.
+
+  
+✅Working With Srtings-Part 3 *
+✍️ in strings the split() method devides a string in multiple parts and returns the
+   result in form of an array.
+
+✍️ in strings the join() method is exactly the opposite of the split() method 
+   and joins the multiple strings and also takes out the strings from an array 
+   which was created during split() method.
+
+✍️ if one of the operand of ( + ) sign is a string it will convert all the operands
+   to a string 
+
+
+
+💡💡Lecture 16💡💡
+✅✅A Closer Look at Function **
+✅✅Topics:(
+Default Parameters,
+How Passing Aurguments Works Values VS Refrence,
+First-Class And Higher-Order Functions,
+Functions Accepting Callback Functions,
+Function Returning Functions,
+The Call And Apply Methods,
+The Bind Method,
+when to use call method and when to use bind method )
+
+✅Default Parameters *
+✍️ the default parameters can contain any expression.
+
+✍️ in default parameters we can use the values of the other parameters that were set
+   before it.
+
+✍️ the function parameters are always executed in same the order as they are defined,
+   so the pass the arguments in the sequence and we can not skip a parameter.
+
+✍️ if we want to skip a parameter we can use this trick of using undefined 
+   on that place, and it works because the value of a default parameter is always
+   undefined untill we don't set it.
+   Eg: createBooking('LH123', undefined, 5);
+
+
+✅How Passing Aurguments Works Values VS Refrence *
+✍️ when we try to copy an object like this( const passenger = jonas; ) we are 
+   realy only copying the refrence to that object in the memory heap, but they
+   both point to the same object in memory.
+
+✍️ passing a primitive type to a function is really just the same as creating a copy
+   like this( const flightNum = flight; ) out side of the function, so the value is 
+   simply copied.
+   on the otherhand when we pass an object to a function it is really just like 
+   copying an object like this( const passenger = jonas; ), so whatever we change
+   in a copy will also happen in the original.
+
+👉 IMPORTANT NOTE: ofcourse we need to be carefull with this behaviour and always keep it in 
+        mind, that's because the fact that objects behave this way when passed to
+        functions can have unforeseeable ( not able to  anticipated or predicted. )
+        consequences in large codebases.
+
+✍️ javaScript does not have passing by refrence, only passing by value, even though it
+   looks like its passing by refrence, so there are languages like C and C++ where
+   you can pass a refrence to any value instead of the value it self this works
+   even with primitives, so you could pass refrence to the value 5 and then the
+   original value outside of the function would be changed and this is called 
+   pass by refrence, but once again javaScript does not have pass by refrence.
+
+👉 IMPORTANT Note: its confusing because As we just learnt for object we do infact pass in
+        a refrence, so the memory address of the object, however that refrence
+        itself is still a value, its simply a value that contains a memory address,
+        so basically we pass a refrence to the function but we do not pass by refrence
+        and this is an important distinction.
+
+
+✅First-Class And Higher-Order Functions *
+✍️ functions are really just another type of objects in javaScript, and since 
+   objects are values functions are values too, and since functions are values
+   there is a bunch of intresting things that we can do with them, like storing
+   them in 'variables' or' object properties'.
+
+✍️ we can also pass functions as an arguments to other functions.
+
+✍️ we can also return a function from another function like we return any value from
+   a function, but its also more advanced and harder to understnad.
+
+✍️ remember that functions are objects and many types of objects in javaScript have
+   methods like 'Array methods' for example, and actually there are also function 
+   methods, so methods that we can call on functions.
+
+✍️ besides methods functions can even have properties and one of them is 'name'.
+
+✍️ a function which is passed in, in another function is known as 'Callback function'
+   and the caller function is known as 'Higher Order Function', thats because
+   the Callback function will be called later by the Higher Order Function.
+   its like the Callback Function saying to the Higher Order Function hey dear
+   don't Call me yet but Call me back once you are ready.
+
+👉 IMPORTANT NOTE: There seems to be some confusion between 'First-Class Functions' 
+    and 'Higher-Order Functions', some people think that they are the same thing
+      but actually they mean different things, so 'First-Class Functions'
+      is just a feature that a programming language either has or does not have
+      all it means is that all functions are values that's it, there are no 
+      'First-Class Functions' in practice its just a concept, there are however
+      'Higher-Order Functions' in practice which are possible because the language
+      supports 'First-Class Functions', its a subtle ( precise ) diffence,
+      but still worth noting if you want to be able to talk like a true javaScript
+      master.
+
+
+✅Functions Accepting Callback Functions *
+✍️ in DOM the Callback function is know as EventListener or EventHandler
+
+✍️ the concept of Callback functions is used all the time in built-in javaScript 
+   functions.
+
+                
+👉 IMPORTANT NOTE: Why are Callback functions so much used in javaScript and why are 
+    they so helpful.
+   (i) The first big advantage of this is that it makes it easy to split up our code
+   into more reusable and interconnected parts.
+   (ii) The Callback functions allow us to creat abstraction and abstraction is 
+   something really important in programming, so basically what abstraction means is
+   that we hide the details of some code implementation because we don't really care
+   about all that detail and this allows us to think about problems at a higher more
+   abstract level so that's why its called an abstraction.
+
+✍️ the Higher Order Function is called higher order function because this function
+   operates at a higher level of abstraction leaving the low level details for the
+   low level functions, thay are not really called low order or low level functions.
+
+   For Example: the 'addevenListener' function own its own would have no idea of what to
+               do whenever the 'click' or any other events happens and so that's why
+               we pass in Callback functions to tell the 'addevenListener' Functions
+               exactly waht to do, and here the 'addevenListener' is a 'Higher Order
+               Function' with the high level of abstraction and and the Callback
+               function is a lower order function with more lower level of abstractions.           
+
+
+
+
+✅Function Returning Functions *
+👉The note of this section is in the actual codebase
+
+
+
+✅The Call And Apply Methods *
+👉The note of this section is in the actual codebase
+
+
+✅The Bind Method *
+✍️ just like the 'call method' bind method also allows us to manually set the 
+   'this keyword' for any function call, now the diffence is that bind method does
+   not immediately call the function instead it returns a new function where the
+   'this keyword' is bound, so its set to whatever value we pass into 'bind method'
+   as first argument. 
+
+✍️ the this keyword is set dynamically.
+
+
+
+💡💡Lecture 17💡💡
+✅✅Topics:(
+Coding Challenge #1,
+how this keyword works in an event handler function,
+Immediately Invoked Function Express (IIFE),
+Clousers,
+More Closure Examples,
+Coding Challenge #2  )
+
+✍️ in an event handler function the 'this keyword' will always point to the element to
+   which it is attached, so we use bind() method to bind it.
+
+✅Immediately Invoked Function Express (IIFE) *
+
+✍️ keep in mind that its important to hide variables and that scopes are a good tool
+   for doing this and this is also the reason why the immediately Invoked function
+   expression were invented.
+
+
+✍️ so basically Immediately Invoked Function Expression (IIFE) is not a feature of the 
+   javaScript language, its more of a pattern that some developer came up with and 
+   that then started to being used by many other developers.
+
+✅Clousers *
+✍️ there is an almost mystical fearure of javaScript functions that many developers
+   fail to fully understand and what i am talking about is something called closures.
+   it is considerd as one of the hardest concept to understand among the javaScript 
+   lerners, however with the right explaination its actually not that hard specially
+   when you already understood the topics like 'Execution Contexts' , 'The Call Stack'
+   and the 'Scpoe Chain'. Because closures kind of bring all of these concepts togather
+   in a beutifull almost magical way.
+
+✍️ a 'Closure' is not a fearure that we explicitly use. so we don't creat 'Closures'
+   manually like we create a 'New Array' or a 'New Function', so a Closure simply
+   happens automatically in certain situations we just need to recognize those 
+   situations.
+
+
+💡💡Lecture 18💡💡
+✅✅Topics:(
+Simple Array Methods,
+The New At Method,
+Looping Arrays: Foreach Method,
+ForEach With Maps And Sets,
+Project: Bankist App,
+Create DOM Elements,
+Coding Challenge #1,
+Data Transformation: Map, Filter, Reduce Methods
+)
+
+✅Simple Array Methods *
+✍️ why arrays do actually have methods? well remember that methods are simply Functions
+   that we can call on objects so basically they are functions attached to objects,
+   so if we have array methods that means that arrays themselves are also objects and
+   so these array methods are simply functions that are attached to all arrays that we
+   create in javaScript, now we will learn why all arrays have access to these methods
+   in later section when we talk about prototypal inheritance but for now i just want
+   you to understnad that arrays are objects and that they get access to special
+   built-in methods that we can essentially see as tools for arrays.
+
+✍️ the splice method works in alsmost the same way as slice method but the
+   Fundamental difference is that splice method does actually change the original
+   array, so it mutates that array.
+
+✍️ need to review the push , pop , shift , unshift , indexof and includes array methods
+
+✍️ no developers in the world knows all the methods of an array by heart we can go on
+   mdn.com to review any array method if forget in future.
+
+
+✅The New At Method *
+👉The note of this section is in the actual codebase
+
+
+✅Looping Arrays: Foreach Method *
+✍️ when should you use the for-of loop and when should you use forEach method, well 
+   one Fundamental difference between the two of them is that you can not break
+   out of forEach loop, so the Continue and Break statements do not work any
+   forEach loop at all, so instead forEach will always loop over the entire array
+   and there is nothing that you can do about it.
+   So if you really need to break out of a loop then you have to keep using the for-of 
+   loop but other than that it really comes down to your personal preference just
+   like so many other things in javaScript.
+   Every programming language always has many different ways or different tools to
+   achieve the same thing and especially as more things keep getting added  to
+   the language there will always be more options to achieve the same result.
+
+
+
+✅ForEach With Maps And Sets *
+👉The note of this section is in the actual codebase
+
+
+✅Project: Bankist App *
+👉No Notes In This Section
+
+
+✅Create DOM Elements *
+✍️ The DOM insertAdjacentHTML() method is used to insert a text as HTML file 
+   to a specified position. This method is used to change or add text as HTML. 
+  
+Eg: node.insertAdjacentHTML(specify-position, text-to-enter) 
+👉we can also use any function after 'specify-position' or in place of 'text-to-enter'
+
+Return Value : This will return the page with the specified change. 
+There are four legal position values that can be used.
+
+afterbegin
+afterend
+beforebegin
+beforeend
+
+✅Coding Challenge #1 *
+👉No Notes In This Section
+
+
+
+✅✅Data Transformation: Map, Filter, Reduce Methods **
+
+✅The Map Method *
+✍️ in javaScript there are three big and important array methods that we use all the 
+   time to perform data Transformations, so basically these are methods that we use
+   to create new arrays based on Transforming data from other arrays and in recent
+   years these tools have become reallt popular and for good reasons, and therefore
+   you will see them everywhere you look in modern javaScript.
+   And the tools i am talking about is Map, Filter and Reduce methods.
+
+✍️ the Map method is yet another method that we can use to loop over arrays, so
+   Map method is actually similar to the 'forEach method' that we studied before But
+   with the difference that Map method creates a brand new array based on the 
+   original array, so essentially the Map method takes an array loops over that array
+   and in each iteration it applies a Callback function that we specify in our code
+   to the current array element.
+
+✍️ the 'Map method' maps the value of the original array to a new array and thats 
+   why this method is called 'Map', and it is extremely useful usually way more useful
+   than 'forEach method' because 'forEach method' simply allows us to do some work
+   with each array element but 'Map method' on the other hand builds us a brand new
+   array containing the results of applying an operation to the original array.
+   all right?
+
+   Eg: const arr [3, 1, 4, 3, 2]      Map current*2         will return [6, 2, 4, 6, 4]
+
+✍️ since we know that 'Map method' will return a brand new array and so we can store
+   it in a new variable.
+
+✍️ the 'Map method' does not mutate or change the original array at all.
+
+✍️ its a good idea to keep in mind why we actually get access to these two parameters
+   here, So one more time all we do here to pass the 'Callback function' into the
+  'Map method'. right? but we do not call the 'Callback function' by ourselves it is
+   the 'Map method' who will call this function for each of the array elements in the
+   movements array. OK? now each time that the 'Map method' calls or Callback it it
+   will simply pass in the 'current array element' as well as the 'current index' and 
+   the 'whole array' and of three here we are only using the first two, just the 
+   'current element' and 'current index'. all right?
+
+
+                      
+✅The Filter Method *
+✍️ 'Filter method' is used to filter for elements in the original array which satisfy
+    a certain condition.
+
+    Eg: const arr [3, 1, 4, 3, 2]     Filter current > 2      will return [3, 4, 3]
+
+    So in this example we are only looking for elements greater than 2 , so only 
+    elements that pass the test that we specified will make it into a new filtered
+    array, or in other words elements for which the conditions is true will be 
+    included in a new array that the filter method returns all other elements
+    will get filtered out so they will not be included in the new array.
+
+✍️ just like other 'Callback function' like in 'Map' and 'forEach'  
+   'filter method' also gets access to the 'current array elemen't as well as 
+    the 'current index' and the 'entire array'.
+
+✍️ why not just use the for-of loop for everything, now the reason for that is 
+   again the push that exists in javaScript for using more functional code like 
+   this , there's also a more practical implication here abd that's because we can 
+   actually chain all of these methods togather so basically use them all one after 
+   another to build a big final result and that is completly impossible with 
+   for-of loop.
+
+
+💡💡Lecture 19💡💡
+✅✅Topics:(
+Reduce Methods,
+Coding Challenge #2,
+The Magic Of Chaining Methods,
+The Find Method )
+
+✅The Reduce Method *
+✍️ 'Reduce method' is used to boil down all the elements of the original array into
+    one single value and an example of this can be to add all the elements of an array
+    togather but we can also do many other interesting things. 
+    
+    So for example of adding up all numbers in the array we need to specify an 
+    operation like below one, where we have an accumulator variable then as the reduce 
+    method loops over the array it keeps adding the current element onto the
+    accumulator until at the end of the loop we have the total sum of all the elements.
+    So yo can imagine this as a snowball that keeps getting bigger and bigger as 
+    it rolls down a hill and this is known as 'The Snowball Effect' and reduce is 
+    very similar to taht.
+    Now we also say that this whole process has now reduced the original array to 
+    one single value which in this case is the sum of all the elements but it can
+    ofcourse be many other operations, Now its this value that then actually gets
+    returned from the 'Reduce method' in the end , So there is no new array in this
+    case but only the reduce value 
+
+    Eg: const arr [3, 1, 4, 3, 2]     Reduce acc + current       will return 13
+
+
+✅The Magic Of Chaining Methods *
+👉The note of this section is in the actual codebase
+
+
+✅The Find Method *
+✍️ So as the name says we can use the 'Find method' to retrieve one element of an 
+   array based on a condition.
+
+
+💡💡Lecture 20💡💡
+✅✅Topics:(
+The Findindex Method,
+Some And Every Methods,
+Flat And FlatMap Method,
+Sorting Arrays
+More Ways Of Creating And Filling  Arrays )
+
+✅The Findindex Method *
+✍️ the 'findindex method' works almost the same way as the 'find method' but 
+   as the name says 'findindex' Returns the 'index' of the 'found element' and not
+   the element itself
+
+
+✅Some And Every Method *
+✍️ we can use 'includes() methode' if an array includes a certain value, 
+   now however we can only really test for equality, so basically 'includes()' 
+   here returns true if any value in the array is exactly equal to minus ( -130 )
+   and so again this is essentially testing for equality but what if we wanted to
+   test for a 'condition' instead and that's where the sum method comes into play. 
+
+
+✅Flat And FlatMap Method *
+👉The note of this section is in the actual codebase
+
+
+✅Sorting Arrays *
+👉The note of this section is in the actual codebase
+
+
+✅More Ways Of Creating And Filling  Arrays *
+✍️ the last think that we are going to learn in this section is how to 
+   'programmatically create and fill Arrays', so far we have always simply created
+   arrays like this: const x = [1, 2, 3, 4, 5, 6]  Right?
+   so basically writing them out by hand literally, so just like above or maybe
+   we might have done it also like: const x = new Array[1, 2, 3, 4, 5, 6] so using
+   a 'new' and then the Array a Constructor and then passing in all the numbers here
+   as arguments and then that's also creates this array. Right?
+
+   in these cases we basically already have our data, however we can actually also 
+   generate arrays programmatically so without having to define all the items 
+   manually and there are many situations in which this is necessary and there are 
+   also multiple ways of doing it and the easiest one is to again use the array 
+   constructor function, so let create a new array here;
+   like this: const x = new Array[7] and then i will pass only one argument i.e 7
+   console.log(x);    so what do you think is going to happen , well we might think
+   that this is going to create an array with only one element, number 7
+
+   OUTPUT: [empty × 7]  but actually it doesn't, instead it creates a new array with
+   seven empty elements in there and it simply contains nothing, so this output
+   is very weird indeed, and the reason for that is this weird behavior of 
+   this: 'new Array()' array function which does it so that whenever we only
+   pass-in one argument then it creates a new empty argument with that length,
+   So if we dont't know about this special particularity of the 'Array constructor
+   Function' then this can lead to weird errors, OK?
+   Now also we can not really use this 'x' array for anything;
+   for example we can not call the 'map() method' on it to now fill it up.
+
+   for example we might want to do this: console.log(x.map(() => 5 )) 
+   OUTPUT: [empty × 7]  but you will see that nothing happened here, so this is 
+   not really useful except for one thing because there is one method that we can 
+   call on this 'empty array' and that is the 'fill() method' so that's a new 
+   method that we haven't studied yet but its very straightforward, so let me show 
+   it to you so that's: x.fill(1) and then all we need to do is to pass-in a value 
+   and it will then fill the entire array with that specific value, OK?
+
+   and this does actually mutate the underlying / original array so we can just 
+   change it there and then simply log the entire thing to the console here: 
+   x.fill(1)
+   console.log(x);
+   OUTPUT: [1, 1, 1, 1, 1, 1, 1] and now we get this array full of 1 (ones).
+
+   this method is actually a little bit similar to the 'slice() method',
+   so besides the value that we want to fill the array with we can also specify
+   where we want it to start to fill, so lets say only at 'index 3'
+   x = [1, 1, 1, 1, 1, 1, 1]
+   x.fill(1, 3)  and so we also can specify a begin parameter and then it only
+   starts at 'index 3' , so it will then fill it up until the end unless we 
+   specify an end parameter just like in 'slice() method' so lets say 5
+   x.fill(1, 3, 5) and also just like in a slice() the final index here is not
+   going to be included in the array.
+   console.log(x);
+   OUTPUT: [empty × 3, 1, 1, empty × 2] so just two are filled up here.
+ 
+  
+✍️ And ofcourse we can also use the 'fill() method' on other arrays so it doesn't
+   have to be an empty array lets say;
+   const arr = [1, 2, 3, 4, 5, 6, 7] 
+   arr.fill(23, 4, 6)
+   lets fill it with 23 at position 4 to 6 and again it will mutate the original
+   array.
+
+   arr.fill(23, 4, 6)
+   console.log(arr);
+   OUTPUT: [1, 2, 3, 4, 23, 23, 7]  and so you see that we put 23 at postion 
+   4 to 6 ( which means at index 4 and 5 )
+
+✍️ And indeed the 'fill() method' can be very useful sometimes.
+
+✍️ however what if we actually wanted to recreate the array programmatically
+   from our first example i.e : const arr = [1, 2, 3, 4, 5, 6, 7] , well
+   for that we could use the 'Array.from() function'.
+   so lets say;
+   const y = Array.from({length: 7}, () => 1);
+   so here we are not using the 'from()' as a method on an 'array' Okay?
+   instead we are using it on the 'Array Constructor' so that's why it is
+   Array.from() ( 'Array' here is a function and then on this function object we 
+   call the 'from() method')
+   so that's sound confusing but we will make more sense of it in the 
+   'object oriented programming section'.
+   
+   but anyway into this function;
+   const y = Array.from({length: 7}, () => 1); ( here in this case we don't even 
+   need any arguments but we still have to write the function, so lets write an 
+   Arraow function here which will simply return 1 in each iteration, 
+   so no arguments no current element no current index and nothing, so all
+   we want to return is a 1 and that will then put a 1 in each of the array 
+   position )
+
+   here we can first pass-in an object with the 'length property' let's set it 
+   to 7 and then the second argument is a 'mapping function' so it is exactly
+   like a 'Callback function' that we pass into the 'map() method' ,
+   so to start let's also programmatically recreate the array of 'seven 1'
+
+   console.log(y);
+   OUTPUT: [1, 1, 1, 1, 1, 1, 1]  in my opinion this is way more cleaner and
+   nicer than the 'fill() method' that we used above.
+
+✍️ let's now take it one step further and actually creat
+   this initial array from 1 to 7:  const arr = [1, 2, 3, 4, 5, 6, 7] 
+
+   const z = Array.from({length:7}, (_, index) => index + 1);
+
+   as always we get access to the 'current element' and 'current index' and 
+   index will vary between 0 to 6 and all we have to return from the Callback
+   function is 'index + 1' 
+   so again the Callback function here is exactly like the one in a 'map() method'
+   so you can simply imagine that you are using this as a Callback function in 
+   calling the 'map() method' on an empty array Okay?
+   as always we get access to the 'current element' and 'current index' and so
+   adding 1 to the index will then give us values from 1 to 7
+
+   console.log(z);
+   OUTPUT: [1, 2, 3, 4, 5, 6, 7]
+
+   and rember how earlier i used a variable in place of 'current element'
+   like _ ( underscore ) which means a throughaway a variable and so this is
+   another use case for using this convention, because we do not need the 
+   'current elements' at all, and but we still ofcourse have to define something
+   as the first parameter because the 'index' that we need is only the second
+   parameter but to denote that we are not using the 'current element' we simply
+   write an underscore ( _ ) Okay? 
+
+✍️ this 'Array.from()' function was initially introduced into javaScript 
+   in order to create arrays from array like structures, so remember? how i
+   talked about so-called iterables before, so things like;
+   Strings, Maps or Sets thay are all iterables in javaScript and so thay can 
+   be converted into real arrays using 'Array.from()' Okay?
+   
+   And that's the reason also for the name of the function because we can create
+   arrays 'from' other things. All Right?
+
+✍️ Now besides these obvious iterables that i just mentioned like 'Maps' or 'Sets'
+   another great example of an array-like structure is the result of using
+   'querySelectorAll', so maybe you remember that 'querySelectorAll' returns
+   something called a 'node-list' which is something like an array which 
+   conatins all the selected elements but its not a real array and so it doesn't
+   have methods like 'map()' for example, but its not a real array and so it 
+   doesn't have most of the array methods like 'map()' or reduce.
+
+   So if we actually wanted to use a real array methods like that on a 'node-list'
+   we would first need to convert the 'node-list' to an array, and for that
+   'Array.from()' is perfect
+
+------------------JSON Notes-----------------
+✍️in json, key is always a string data type and value can be of any data type 
+      like number, array,object,bool,null,string etc.
+
+✍️the most used json is array of object.  

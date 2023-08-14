@@ -1,0 +1,101 @@
+
+✅avaScript Doubts
+11_== VS ===
+12_let VS Const
+4_Regular function vs Arrow function vs function declaration.
+5_Arguments keyword.
+6_Type conversion vs Type Coercion in JavaScript ?
+#Coading Chalange ( L_13 at 01:51:50 hrs)
+9_Logical Assignment Operator (|| (OR) and Nullish Assignment operator(ony null and undefined are false but 0 and '' are true)).
+10_String tamplete or string literal.
+
+
+///////////////////////////////////////////////////////////////////
+
+✅Data Structure_Modern Operators And Strings
+💡Lecture 13
+1_ Destructuring in javascript ( array ( L_13 at 57 sec) and object ( L_13 at 20:29 min)).
+2_ What is spread operator in js. ( L_13 at 40:15 min)
+3_ Rest pattern and Rest parameter. ( L_13 at 01:01:40 hrs)
+4_ Short circuiting (&& and ||) in js. ( L_13 at 01:20:43 hrs)
+5_ The Nullish Coalescing Operator ( ?? ). ( L_13 at 01:36:38 hrs)
+6_ Logical Assignment Operators ( L_13 at 01:40:10 hrs)
+#Coading Chalange #1 ( L_13 at 01:51:50 hrs)
+
+💡Lecture 14
+1_for of lopp ( L_14 at 0 sec)
+2_Enhanced object literal ( L_14 at 7:22 min)
+3_ what is object leteral ( doubts L-14 at 7:45 min)
+4_Optional chaining ( L_14 at 14:25 min)
+5_ Looping Objects : Object Keys ( Object property name ), Values ( Object property Value ), And Enteries ( Entire Object) ( L_14 at 30:33 min)
+6_Coding Chalange #2 ( L_14 at 40:42 min)
+7_Sets ( L_14 at 55:13 min)
+8_Maps: Fundamentals ( L_14 at 01:08:32 hrs)
+9_Maps: Iteration ( L_14 at 01:22:35 hrs)
+
+
+💡Lecture 15
+1_SUMMARY: Which Data Structure To Use ( L_15 at 0:0 min )
+2_Coding Challenge #3  ( L_15 at 09:41 min )
+3_Working With Srtings-Part 1  ( L_15 at 19:18 min )
+4_ Working With Srtings-Part 2  ( L_15 at 36:12 min )
+5_what is regular expression ( L_15 at 48:40 min )
+6_ Working With Srtings-Part 3  ( L_15 at 57:57 min )
+7_Coding Challenge #4  ( L_15 at 01:19:38 hrs)
+8_String Methods Practice  ( L_15 at 01:34:53 hrs)
+
+
+✅Functions
+💡Lecture 16
+1_Default Parameters ( L_16 at 51:0 sec)
+2_How Passing Aurguments Works Values VS Refrence  ( L_16 at 10:06 min)
+3_First-Class And Higher-Order Functions  ( L_16 at 23:43 min)
+4_Functions Accepting Callback Functions ( L_16 at 29:07 min)
+5_Function Returning Functions  ( L_16 at 44:27 min)
+6_The Call And Apply Methods  ( L_16 at 51:04 min)
+7_The Bind Method ( L_16 at 01:07:57 hrs)
+9_when to use call method and when to use bind method
+
+
+💡Lecture 17
+1_Coding Challenge #1 ( L_17 at 00:00 sec)
+2_how this keyword works in an event handler function   ( L_17 at 11:37 min )
+3_Immediately Invoked Function Express (IIFE) ( L_17 at 18:48 min )
+4_Clousers ( L_17 at 26:41 min)
+5_More Closure Examples ( L_17 at 46:29 min)
+6_Coding Challenge #2  ( L_17 at 01:02:00 hrs)
+
+
+✅Arrays
+💡Lecture 18
+1_Simple Array Methods
+2_The New At Method
+3_Looping Arrays: Foreach Method
+4_ForEach With Maps And Sets
+5_Project: Bankist Ap
+6_Create DOM Elements
+7_Coding Challenge #1
+8_Data Transformation: Map, Filter, Reduce Methods
+
+
+💡Lecture 19
+1_Reduce Methods
+2_Coding Challenge #2
+3_The Magic Of Chaining Methods
+4_The Find Method
+
+
+💡Lecture 20
+1_The Findindex Method
+2_Some And Every Methods 
+3_Flat And FlatMap Method
+4_Sorting Arrays
+5_More Ways Of Creating And Filling  Arrays
+
+
+
+
+----------------JSON Doubts-----------------
+1_what is XML API.
+2_XML VS JSON.
+3_what is soap services.
